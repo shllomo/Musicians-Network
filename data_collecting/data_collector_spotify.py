@@ -61,11 +61,11 @@ def update_artists_csv(input_file, output_file, start_raw):
                 time.sleep(0.2) 
 
     except KeyboardInterrupt:
-        df.to_csv(interrupt_save_path = f'interrupted_{output_file}', index=False)
+        df.to_csv(interrupt_save_path = f'{output_file}_interrupted', index=False)
         raise
     
     except:
-        df.to_csv(f'execp_{output_file}', index=False)
+        df.to_csv(f'{output_file}_execp', index=False)
     
     df.to_csv(output_file, index=False)
 
